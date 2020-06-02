@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 01 2020 г., 09:42
+-- Время создания: Июн 02 2020 г., 10:17
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.1.33
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_classroom`
+-- Структура таблицы `classroom`
 --
 
-CREATE TABLE `gromov_classroom` (
+CREATE TABLE `classroom` (
   `classroom_id` int(11) NOT NULL,
   `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT 1
@@ -36,19 +36,19 @@ CREATE TABLE `gromov_classroom` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_day`
+-- Структура таблицы `day`
 --
 
-CREATE TABLE `gromov_day` (
+CREATE TABLE `day` (
   `day_id` tinyint(4) NOT NULL,
   `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `gromov_day`
+-- Дамп данных таблицы `day`
 --
 
-INSERT INTO `gromov_day` (`day_id`, `name`) VALUES
+INSERT INTO `day` (`day_id`, `name`) VALUES
 (1, 'понедельник'),
 (2, 'вторник'),
 (3, 'среда'),
@@ -59,10 +59,10 @@ INSERT INTO `gromov_day` (`day_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_gender`
+-- Структура таблицы `gender`
 --
 
-CREATE TABLE `gromov_gender` (
+CREATE TABLE `gender` (
   `gender_id` tinyint(4) NOT NULL,
   `name` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -70,10 +70,10 @@ CREATE TABLE `gromov_gender` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_gruppa`
+-- Структура таблицы `gruppa`
 --
 
-CREATE TABLE `gromov_gruppa` (
+CREATE TABLE `gruppa` (
   `gruppa_id` int(11) NOT NULL,
   `name` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `special_id` int(11) NOT NULL,
@@ -84,20 +84,20 @@ CREATE TABLE `gromov_gruppa` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_lesson_num`
+-- Структура таблицы `lesson_num`
 --
 
-CREATE TABLE `gromov_lesson_num` (
+CREATE TABLE `lesson_num` (
   `lesson_num_id` int(11) NOT NULL,
   `name` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `time_lesson` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `gromov_lesson_num`
+-- Дамп данных таблицы `lesson_num`
 --
 
-INSERT INTO `gromov_lesson_num` (`lesson_num_id`, `name`, `time_lesson`) VALUES
+INSERT INTO `lesson_num` (`lesson_num_id`, `name`, `time_lesson`) VALUES
 (1, '1 пара', '08:30:00'),
 (2, '2 пара', '10:10:00'),
 (3, '3 пара', '12:20:00'),
@@ -107,10 +107,10 @@ INSERT INTO `gromov_lesson_num` (`lesson_num_id`, `name`, `time_lesson`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_lesson_plan`
+-- Структура таблицы `lesson_plan`
 --
 
-CREATE TABLE `gromov_lesson_plan` (
+CREATE TABLE `lesson_plan` (
   `lesson_plan_id` int(11) NOT NULL,
   `gruppa_id` int(11) NOT NULL,
   `subject_id` int(11) NOT NULL,
@@ -120,20 +120,20 @@ CREATE TABLE `gromov_lesson_plan` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_otdel`
+-- Структура таблицы `otdel`
 --
 
-CREATE TABLE `gromov_otdel` (
+CREATE TABLE `otdel` (
   `otdel_id` smallint(6) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(4) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `gromov_otdel`
+-- Дамп данных таблицы `otdel`
 --
 
-INSERT INTO `gromov_otdel` (`otdel_id`, `name`, `active`) VALUES
+INSERT INTO `otdel` (`otdel_id`, `name`, `active`) VALUES
 (1, 'программирование', 1),
 (2, 'общеобразовательные дисциплины', 1),
 (3, 'строительство', 1);
@@ -141,10 +141,10 @@ INSERT INTO `gromov_otdel` (`otdel_id`, `name`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_role`
+-- Структура таблицы `role`
 --
 
-CREATE TABLE `gromov_role` (
+CREATE TABLE `role` (
   `role_id` tinyint(4) NOT NULL,
   `sys_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -152,10 +152,10 @@ CREATE TABLE `gromov_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `gromov_role`
+-- Дамп данных таблицы `role`
 --
 
-INSERT INTO `gromov_role` (`role_id`, `sys_name`, `name`, `active`) VALUES
+INSERT INTO `role` (`role_id`, `sys_name`, `name`, `active`) VALUES
 (1, 'admin', 'Администратор', 1),
 (2, 'manager', 'Менеджер', 1),
 (3, 'teacher', 'Преподаватель', 1),
@@ -164,10 +164,10 @@ INSERT INTO `gromov_role` (`role_id`, `sys_name`, `name`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_schedule`
+-- Структура таблицы `schedule`
 --
 
-CREATE TABLE `gromov_schedule` (
+CREATE TABLE `schedule` (
   `schedule_id` int(11) NOT NULL,
   `lesson_plan_id` int(11) NOT NULL,
   `day_id` tinyint(4) NOT NULL,
@@ -178,10 +178,10 @@ CREATE TABLE `gromov_schedule` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_special`
+-- Структура таблицы `special`
 --
 
-CREATE TABLE `gromov_special` (
+CREATE TABLE `special` (
   `special_id` int(11) NOT NULL,
   `name` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
   `otdel_id` smallint(6) NOT NULL,
@@ -189,10 +189,10 @@ CREATE TABLE `gromov_special` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Дамп данных таблицы `gromov_special`
+-- Дамп данных таблицы `special`
 --
 
-INSERT INTO `gromov_special` (`special_id`, `name`, `otdel_id`, `active`) VALUES
+INSERT INTO `special` (`special_id`, `name`, `otdel_id`, `active`) VALUES
 (1, 'информационные системы', 1, 1),
 (2, 'нефтегазовое дело', 2, 1),
 (3, 'строительство и эксплуатация зданий и сооружений', 3, 1),
@@ -202,10 +202,10 @@ INSERT INTO `gromov_special` (`special_id`, `name`, `otdel_id`, `active`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_student`
+-- Структура таблицы `student`
 --
 
-CREATE TABLE `gromov_student` (
+CREATE TABLE `student` (
   `user_id` bigint(20) NOT NULL,
   `gruppa_id` int(11) NOT NULL,
   `num_zach` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -214,10 +214,10 @@ CREATE TABLE `gromov_student` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_subject`
+-- Структура таблицы `subject`
 --
 
-CREATE TABLE `gromov_subject` (
+CREATE TABLE `subject` (
   `subject_id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `otdel_id` smallint(6) NOT NULL,
@@ -228,10 +228,10 @@ CREATE TABLE `gromov_subject` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_teacher`
+-- Структура таблицы `teacher`
 --
 
-CREATE TABLE `gromov_teacher` (
+CREATE TABLE `teacher` (
   `user_id` bigint(20) NOT NULL,
   `otdel_id` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -239,10 +239,10 @@ CREATE TABLE `gromov_teacher` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `gromov_user`
+-- Структура таблицы `user`
 --
 
-CREATE TABLE `gromov_user` (
+CREATE TABLE `user` (
   `user_id` bigint(20) NOT NULL,
   `lastname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `firstname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -260,61 +260,61 @@ CREATE TABLE `gromov_user` (
 --
 
 --
--- Индексы таблицы `gromov_classroom`
+-- Индексы таблицы `classroom`
 --
-ALTER TABLE `gromov_classroom`
+ALTER TABLE `classroom`
   ADD PRIMARY KEY (`classroom_id`);
 
 --
--- Индексы таблицы `gromov_day`
+-- Индексы таблицы `day`
 --
-ALTER TABLE `gromov_day`
+ALTER TABLE `day`
   ADD PRIMARY KEY (`day_id`);
 
 --
--- Индексы таблицы `gromov_gender`
+-- Индексы таблицы `gender`
 --
-ALTER TABLE `gromov_gender`
+ALTER TABLE `gender`
   ADD PRIMARY KEY (`gender_id`);
 
 --
--- Индексы таблицы `gromov_gruppa`
+-- Индексы таблицы `gruppa`
 --
-ALTER TABLE `gromov_gruppa`
+ALTER TABLE `gruppa`
   ADD PRIMARY KEY (`gruppa_id`),
   ADD KEY `FK_gromov_gruppa_gromov_special_special_id` (`special_id`);
 
 --
--- Индексы таблицы `gromov_lesson_num`
+-- Индексы таблицы `lesson_num`
 --
-ALTER TABLE `gromov_lesson_num`
+ALTER TABLE `lesson_num`
   ADD PRIMARY KEY (`lesson_num_id`);
 
 --
--- Индексы таблицы `gromov_lesson_plan`
+-- Индексы таблицы `lesson_plan`
 --
-ALTER TABLE `gromov_lesson_plan`
+ALTER TABLE `lesson_plan`
   ADD PRIMARY KEY (`lesson_plan_id`),
   ADD KEY `FK_gromov_lesson_plan_gromov_gruppa_gruppa_id` (`gruppa_id`),
   ADD KEY `p` (`user_id`),
   ADD KEY `FK_gromov_lesson_plan_gromov_subject_subject_id` (`subject_id`);
 
 --
--- Индексы таблицы `gromov_otdel`
+-- Индексы таблицы `otdel`
 --
-ALTER TABLE `gromov_otdel`
+ALTER TABLE `otdel`
   ADD PRIMARY KEY (`otdel_id`);
 
 --
--- Индексы таблицы `gromov_role`
+-- Индексы таблицы `role`
 --
-ALTER TABLE `gromov_role`
+ALTER TABLE `role`
   ADD PRIMARY KEY (`role_id`);
 
 --
--- Индексы таблицы `gromov_schedule`
+-- Индексы таблицы `schedule`
 --
-ALTER TABLE `gromov_schedule`
+ALTER TABLE `schedule`
   ADD PRIMARY KEY (`schedule_id`),
   ADD KEY `FK_gromov_schedule_gromov_lesson_plan_lesson_plan_id` (`lesson_plan_id`),
   ADD KEY `FK_gromov_schedule_gromov_lesson_num_lesson_num_id` (`lesson_num_id`),
@@ -322,37 +322,37 @@ ALTER TABLE `gromov_schedule`
   ADD KEY `FK_gromov_schedule_gromov_classroom_classroom_id` (`calssroom_id`);
 
 --
--- Индексы таблицы `gromov_special`
+-- Индексы таблицы `special`
 --
-ALTER TABLE `gromov_special`
+ALTER TABLE `special`
   ADD PRIMARY KEY (`special_id`),
   ADD KEY `FK_gromov_special_gromov_otdel_otdel_id` (`otdel_id`);
 
 --
--- Индексы таблицы `gromov_student`
+-- Индексы таблицы `student`
 --
-ALTER TABLE `gromov_student`
+ALTER TABLE `student`
   ADD PRIMARY KEY (`user_id`),
   ADD KEY `FK_gromov_student_gromov_gruppa_gruppa_id` (`gruppa_id`);
 
 --
--- Индексы таблицы `gromov_subject`
+-- Индексы таблицы `subject`
 --
-ALTER TABLE `gromov_subject`
+ALTER TABLE `subject`
   ADD PRIMARY KEY (`subject_id`),
   ADD KEY `FK_gromov_subject_gromov_otdel_otdel_id` (`otdel_id`);
 
 --
--- Индексы таблицы `gromov_teacher`
+-- Индексы таблицы `teacher`
 --
-ALTER TABLE `gromov_teacher`
+ALTER TABLE `teacher`
   ADD PRIMARY KEY (`user_id`),
   ADD KEY `FK_gromov_teacher_gromov_otdel_otdel_id` (`otdel_id`);
 
 --
--- Индексы таблицы `gromov_user`
+-- Индексы таблицы `user`
 --
-ALTER TABLE `gromov_user`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
   ADD KEY `FK_gromov_user_gromov_gender_gender_id` (`gender_id`),
   ADD KEY `FK_gromov_user_gromov_role_role_id` (`role_id`);
@@ -362,75 +362,75 @@ ALTER TABLE `gromov_user`
 --
 
 --
--- AUTO_INCREMENT для таблицы `gromov_classroom`
+-- AUTO_INCREMENT для таблицы `classroom`
 --
-ALTER TABLE `gromov_classroom`
+ALTER TABLE `classroom`
   MODIFY `classroom_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_day`
+-- AUTO_INCREMENT для таблицы `day`
 --
-ALTER TABLE `gromov_day`
+ALTER TABLE `day`
   MODIFY `day_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_gender`
+-- AUTO_INCREMENT для таблицы `gender`
 --
-ALTER TABLE `gromov_gender`
+ALTER TABLE `gender`
   MODIFY `gender_id` tinyint(4) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_gruppa`
+-- AUTO_INCREMENT для таблицы `gruppa`
 --
-ALTER TABLE `gromov_gruppa`
+ALTER TABLE `gruppa`
   MODIFY `gruppa_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_lesson_num`
+-- AUTO_INCREMENT для таблицы `lesson_num`
 --
-ALTER TABLE `gromov_lesson_num`
+ALTER TABLE `lesson_num`
   MODIFY `lesson_num_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_lesson_plan`
+-- AUTO_INCREMENT для таблицы `lesson_plan`
 --
-ALTER TABLE `gromov_lesson_plan`
+ALTER TABLE `lesson_plan`
   MODIFY `lesson_plan_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_otdel`
+-- AUTO_INCREMENT для таблицы `otdel`
 --
-ALTER TABLE `gromov_otdel`
+ALTER TABLE `otdel`
   MODIFY `otdel_id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_role`
+-- AUTO_INCREMENT для таблицы `role`
 --
-ALTER TABLE `gromov_role`
+ALTER TABLE `role`
   MODIFY `role_id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_schedule`
+-- AUTO_INCREMENT для таблицы `schedule`
 --
-ALTER TABLE `gromov_schedule`
+ALTER TABLE `schedule`
   MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_special`
+-- AUTO_INCREMENT для таблицы `special`
 --
-ALTER TABLE `gromov_special`
+ALTER TABLE `special`
   MODIFY `special_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_subject`
+-- AUTO_INCREMENT для таблицы `subject`
 --
-ALTER TABLE `gromov_subject`
+ALTER TABLE `subject`
   MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `gromov_user`
+-- AUTO_INCREMENT для таблицы `user`
 --
-ALTER TABLE `gromov_user`
+ALTER TABLE `user`
   MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
@@ -438,60 +438,60 @@ ALTER TABLE `gromov_user`
 --
 
 --
--- Ограничения внешнего ключа таблицы `gromov_gruppa`
+-- Ограничения внешнего ключа таблицы `gruppa`
 --
-ALTER TABLE `gromov_gruppa`
-  ADD CONSTRAINT `FK_gromov_gruppa_gromov_special_special_id` FOREIGN KEY (`special_id`) REFERENCES `gromov_special` (`special_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `gruppa`
+  ADD CONSTRAINT `FK_gromov_gruppa_gromov_special_special_id` FOREIGN KEY (`special_id`) REFERENCES `special` (`special_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ограничения внешнего ключа таблицы `gromov_lesson_plan`
+-- Ограничения внешнего ключа таблицы `lesson_plan`
 --
-ALTER TABLE `gromov_lesson_plan`
-  ADD CONSTRAINT `FK_gromov_lesson_plan_gromov_gruppa_gruppa_id` FOREIGN KEY (`gruppa_id`) REFERENCES `gromov_gruppa` (`gruppa_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_gromov_lesson_plan_gromov_subject_subject_id` FOREIGN KEY (`subject_id`) REFERENCES `gromov_subject` (`subject_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `p` FOREIGN KEY (`user_id`) REFERENCES `gromov_teacher` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `lesson_plan`
+  ADD CONSTRAINT `FK_gromov_lesson_plan_gromov_gruppa_gruppa_id` FOREIGN KEY (`gruppa_id`) REFERENCES `gruppa` (`gruppa_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_gromov_lesson_plan_gromov_subject_subject_id` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`subject_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `p` FOREIGN KEY (`user_id`) REFERENCES `teacher` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ограничения внешнего ключа таблицы `gromov_schedule`
+-- Ограничения внешнего ключа таблицы `schedule`
 --
-ALTER TABLE `gromov_schedule`
-  ADD CONSTRAINT `FK_gromov_schedule_gromov_classroom_classroom_id` FOREIGN KEY (`calssroom_id`) REFERENCES `gromov_classroom` (`classroom_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_gromov_schedule_gromov_day_day_id` FOREIGN KEY (`day_id`) REFERENCES `gromov_day` (`day_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_gromov_schedule_gromov_lesson_num_lesson_num_id` FOREIGN KEY (`lesson_num_id`) REFERENCES `gromov_lesson_num` (`lesson_num_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_gromov_schedule_gromov_lesson_plan_lesson_plan_id` FOREIGN KEY (`lesson_plan_id`) REFERENCES `gromov_lesson_plan` (`lesson_plan_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `schedule`
+  ADD CONSTRAINT `FK_gromov_schedule_gromov_classroom_classroom_id` FOREIGN KEY (`calssroom_id`) REFERENCES `classroom` (`classroom_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_gromov_schedule_gromov_day_day_id` FOREIGN KEY (`day_id`) REFERENCES `day` (`day_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_gromov_schedule_gromov_lesson_num_lesson_num_id` FOREIGN KEY (`lesson_num_id`) REFERENCES `lesson_num` (`lesson_num_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_gromov_schedule_gromov_lesson_plan_lesson_plan_id` FOREIGN KEY (`lesson_plan_id`) REFERENCES `lesson_plan` (`lesson_plan_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ограничения внешнего ключа таблицы `gromov_special`
+-- Ограничения внешнего ключа таблицы `special`
 --
-ALTER TABLE `gromov_special`
-  ADD CONSTRAINT `FK_gromov_special_gromov_otdel_otdel_id` FOREIGN KEY (`otdel_id`) REFERENCES `gromov_otdel` (`otdel_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `special`
+  ADD CONSTRAINT `FK_gromov_special_gromov_otdel_otdel_id` FOREIGN KEY (`otdel_id`) REFERENCES `otdel` (`otdel_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ограничения внешнего ключа таблицы `gromov_student`
+-- Ограничения внешнего ключа таблицы `student`
 --
-ALTER TABLE `gromov_student`
-  ADD CONSTRAINT `FK_gromov_student_gromov_gruppa_gruppa_id` FOREIGN KEY (`gruppa_id`) REFERENCES `gromov_gruppa` (`gruppa_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_gromov_student_gromov_user_user_id` FOREIGN KEY (`user_id`) REFERENCES `gromov_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `student`
+  ADD CONSTRAINT `FK_gromov_student_gromov_gruppa_gruppa_id` FOREIGN KEY (`gruppa_id`) REFERENCES `gruppa` (`gruppa_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_gromov_student_gromov_user_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ограничения внешнего ключа таблицы `gromov_subject`
+-- Ограничения внешнего ключа таблицы `subject`
 --
-ALTER TABLE `gromov_subject`
-  ADD CONSTRAINT `FK_gromov_subject_gromov_otdel_otdel_id` FOREIGN KEY (`otdel_id`) REFERENCES `gromov_otdel` (`otdel_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `subject`
+  ADD CONSTRAINT `FK_gromov_subject_gromov_otdel_otdel_id` FOREIGN KEY (`otdel_id`) REFERENCES `otdel` (`otdel_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ограничения внешнего ключа таблицы `gromov_teacher`
+-- Ограничения внешнего ключа таблицы `teacher`
 --
-ALTER TABLE `gromov_teacher`
-  ADD CONSTRAINT `FK_gromov_teacher_gromov_otdel_otdel_id` FOREIGN KEY (`otdel_id`) REFERENCES `gromov_otdel` (`otdel_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_gromov_teacher_gromov_user_user_id` FOREIGN KEY (`user_id`) REFERENCES `gromov_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `teacher`
+  ADD CONSTRAINT `FK_gromov_teacher_gromov_otdel_otdel_id` FOREIGN KEY (`otdel_id`) REFERENCES `otdel` (`otdel_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_gromov_teacher_gromov_user_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Ограничения внешнего ключа таблицы `gromov_user`
+-- Ограничения внешнего ключа таблицы `user`
 --
-ALTER TABLE `gromov_user`
-  ADD CONSTRAINT `FK_gromov_user_gromov_gender_gender_id` FOREIGN KEY (`gender_id`) REFERENCES `gromov_gender` (`gender_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `FK_gromov_user_gromov_role_role_id` FOREIGN KEY (`role_id`) REFERENCES `gromov_role` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `user`
+  ADD CONSTRAINT `FK_gromov_user_gromov_gender_gender_id` FOREIGN KEY (`gender_id`) REFERENCES `gender` (`gender_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `FK_gromov_user_gromov_role_role_id` FOREIGN KEY (`role_id`) REFERENCES `role` (`role_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
