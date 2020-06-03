@@ -1,5 +1,5 @@
 <?php
-class SpecialMap extends BaseMap
-{
+
+class SpecialMap extends BaseMap {
 
 }

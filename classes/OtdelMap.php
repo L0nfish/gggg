@@ -1,5 +1,5 @@
 <?php
-class OtdelMap extends BaseMap
-{
 
+class OtdelMap extends BaseMap {
+    
 }

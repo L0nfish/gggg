@@ -1,5 +1,5 @@
 <?php
-class LessonPlanMap extends BaseMap
-{
+
+class LessonPlanMap extends BaseMap {
 
 }

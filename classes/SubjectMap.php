@@ -1,5 +1,5 @@
 <?php
-class SubjectMap extends BaseMap
-{
+
+class SubjectMap extends BaseMap {
 
 }

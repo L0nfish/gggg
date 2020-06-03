@@ -1,3 +1,7 @@
+<!--------------------------
+        | Your Page Content Here |
+        -------------------------->
+
 </section>
 <!-- /.content -->
 </div>
@@ -10,7 +14,7 @@
         Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2020 <a href="http://polytech.kz/" target="_blank" rel="noopener">Политехнический колледж г. Нур-Султан</a>.</strong> Все права защищены.
 </footer>
 
 <!-- Control Sidebar -->

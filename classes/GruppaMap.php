@@ -1,5 +1,5 @@
 <?php
-class GruppaMap extends BaseMap
-{
+
+class GruppaMap extends BaseMap {
 
 }

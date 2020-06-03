@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?=($header)? $header : 'Расписание занятий колледжа';?></title>
+    <title> <?=isset($header)? $header : 'Расписание занятий колледжа';?> </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="template/css/bootstrap.min.css">
@@ -62,9 +62,9 @@ desired effect
         <!-- Logo -->
         <a href="index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>Р</b></span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Расписание</b></span>
+            <span class="logo-lg"><b>Расписание</b</span>
         </a>
 
         <!-- Header Navbar -->
@@ -77,23 +77,40 @@ desired effect
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <!-- Messages: style can be found in dropdown.less-->
+
                     <!-- User Account Menu -->
                     <li class="dropdown user user-menu">
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
+                            <!--<img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">-->
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Здравствуйте, Джон Смит Тимофеевич <?=$_SESSION['fio'];?></span>
+                            <span class="hidden-xs">Здравствуйте, <?=$_SESSION['fio'];?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
 
                                 <p>
-                                    <?=$_SESSION['fio'];?>Джон Смит Тимофеевич
-                                    <small><?=$_SESSION['roleName'];?>Администратор</small>
+                                    <?=$_SESSION['fio'];?>
+                                    <small><?=$_SESSION['roleName'];?></small>
                                 </p>
                             </li>
+                            <!-- Menu Body -->
+<!--                            <li class="user-body">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-xs-4 text-center">-->
+<!--                                        <a href="#">Followers</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-xs-4 text-center">-->
+<!--                                        <a href="#">Sales</a>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-xs-4 text-center">-->
+<!--                                        <a href="#">Friends</a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                /.row -->
+<!--                            </li>-->
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
@@ -110,6 +127,9 @@ desired effect
                         </ul>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
+<!--                    <li>-->
+<!--                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>-->
+<!--                    </li>-->
                 </ul>
             </div>
         </nav>
@@ -121,10 +141,31 @@ desired effect
         <section class="sidebar">
 
             <!-- Sidebar user panel (optional) -->
+<!--            <div class="user-panel">-->
+<!--                <div class="pull-left image">-->
+<!--                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
+<!--                </div>-->
+<!--                <div class="pull-left info">-->
+<!--                    <p>Alexander Pierce</p>-->
+<!--                    < Status -->
+<!--                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <!-- Sidebar Menu -->
+            <!-- search form (Optional) -->
+<!--            <form action="#" method="get" class="sidebar-form">-->
+<!--                <div class="input-group">-->
+<!--                    <input type="text" name="q" class="form-control" placeholder="Search...">-->
+<!--                    <span class="input-group-btn">-->
+<!--              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>-->
+<!--              </button>-->
+<!--            </span>-->
+<!--                </div>-->
+<!--            </form>-->
+            <!-- /.search form -->
+
             <?php require_once 'template/menu.php'; ?>
-            <!-- /.sidebar-menu -->
+
         </section>
         <!-- /.sidebar -->
     </aside>
@@ -132,20 +173,12 @@ desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <!-- <section class="content-header">
-             <h1>
-                 Page Header
-                 <small>Optional description</small>
-             </h1>
-             <ol class="breadcrumb">
-                 <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                 <li class="active">Here</li>
-             </ol>
-         </section>-->
+        <section class="content-header">
+<!--            <ol class="breadcrumb">-->
+<!--                <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>-->
+<!--                <li class="active">Here</li>-->
+<!--            </ol>-->
+        </section>
 
         <!-- Main content -->
         <section class="content container-fluid">
-
-            <!--------------------------
-              | Your Page Content Here |
-              -------------------------->

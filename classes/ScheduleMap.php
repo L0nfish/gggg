@@ -1,7 +1,5 @@
 <?php
 
+class ScheduleMap extends BaseMap {
 
-class ScheduleMap extends BaseMap
-{
-  
 }
