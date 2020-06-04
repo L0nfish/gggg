@@ -8,8 +8,4 @@ class Gruppa extends Table {
     public $date_begin = null;
     public $date_end = null;
 
-    public function validate()
-    {
-        return false;
-    }
 }
