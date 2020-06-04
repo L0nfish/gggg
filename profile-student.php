@@ -24,7 +24,7 @@ require_once 'template/header.php';
                 </section>
                 <div class="box-body">
 
-                    <a class="btn btn-success" href="add-teacher.php?id=<?=$id;?>">Изменить</a>
+                    <a class="btn btn-success" href="add-student.php?id=<?=$id;?>">Изменить</a>
 
                 </div>
                 <div class="box-body">
